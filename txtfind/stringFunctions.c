@@ -118,3 +118,14 @@ int similar(char *s, char *t, int n){
   }
   return false;
 }
+
+void printLines(char* str){
+  int lent = 0;
+  char line[LINE];
+  do {
+    lent = getLine(line);
+    if(lent > 0 && substring(line, str) == true)
+      printf("%s", line);
+
+  } while(lent != EOF);
+}
