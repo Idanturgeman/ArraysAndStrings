@@ -43,3 +43,27 @@ int getLine(char s[]){
 
   return i PREV;
 }
+
+int getword(char w[]){
+  if(isEOF(false))
+    return EOF;
+
+  int i = 0;
+  char c=' ';
+  while(c == ' ' || c == '\t' || c == '\n' || c == '\0') {
+    c = getchar();
+    if(isEOF(c == '\0'))  //set+get eof
+      return PREV;
+  }
+  while(c != ' ' && c != '\t' && c != '\n' && c != '\0' && i < WORD PREV) {
+
+    *(w+(i++)) = c;
+    c = getchar();
+  }
+  *(w+i) = '\0';
+
+  if(isEOF(c == EOF))
+    return EOF;
+
+  return i PREV;
+}
