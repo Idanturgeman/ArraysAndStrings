@@ -6,7 +6,7 @@
 #define PREV -1
 #endif
 
-#include "insertionSort.h"
+#include "insertion.h"
 #include <stdio.h>
 
 int main(){
