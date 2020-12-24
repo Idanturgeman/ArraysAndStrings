@@ -129,3 +129,14 @@ void printLines(char* str){
 
   } while(lent != EOF);
 }
+
+void printSimilarWords(char* str){
+  int lent;
+  do {
+    char word[WORD];
+    lent = getword(word);
+    if(lent > 0 && (similar(word, str, 0) || similar(word, str, 1)))
+      printf("%s\n", word);
+
+  } while(lent != EOF);
+}
