@@ -2,6 +2,8 @@
 #define PREV -1
 #endif
 
+#include "insertion.h" 
+
 void shift_element(int* arr, int i){
   int tmp = *(arr+i);
   for( ; 0 < i; i--){
