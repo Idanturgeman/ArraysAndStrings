@@ -67,3 +67,17 @@ int getword(char w[]){
 
   return i PREV;
 }
+
+int substring(char* str1, char* str2){
+  int str1Len = strlen(str1);
+  int str2Len = strlen(str2);
+  for (size_t i = 0; i < str1Len - str2Len; i++) {
+    bool found = true;
+    for (size_t j = 0; j < str2Len && found; j++) {
+      found = found && (*(str1+i+j) == *(str2+j));
+    }
+    if(found)
+      return true;
+  }
+  return false;
+}
