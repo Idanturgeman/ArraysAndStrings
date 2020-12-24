@@ -81,3 +81,40 @@ int substring(char* str1, char* str2){
   }
   return false;
 }
+
+void copyLessOne(char *src, char* trgt, int drop){
+
+  for (size_t i = 0; i < drop ; i++) {
+    *(trgt+i) = *(src+i);
+  }
+
+  for (size_t i = drop; *(src+i) != '\0'; i++) {
+    *(trgt+i) = *(src+i NEXT);
+  }
+}
+
+int similar(char *s, char *t, int n){
+  int sLen = strlen(s);
+  int tLen = strlen(t);
+  if(n == 0){
+    if(sLen != tLen)
+      return false;
+    for (size_t i = 0; i < sLen; i++) {
+      if(*(s+i) != *(t+i))
+        return false;
+    }
+    return true;
+  }
+
+  if(sLen <= tLen || n < 0)
+    return false;
+
+  for (size_t i = 0; i < sLen; i++) {
+
+    char sLess[WORD] = {0};
+    copyLessOne(s, sLess, i);
+    if(similar(sLess, t, n PREV))
+      return true;
+  }
+  return false;
+}
