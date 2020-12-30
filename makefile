@@ -12,8 +12,8 @@ insertion.o: insertion.c
 txtfind: stringFunctions.o maintf.o
 	gcc stringFunctions.o maintf.o -o txtfind
 
-main.o: maintf.c stringFunctions.h
-	gcc -Wall -c maintf.c
+maintf.o: maintf.c stringFunctions.h
+	gcc -Wall -c maintf.c -o maintf.o
 
 stringFunctions.o: stringFunctions.c
 	gcc -Wall -c stringFunctions.c
