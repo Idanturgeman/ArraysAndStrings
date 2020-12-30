@@ -12,7 +12,7 @@
 int main(){
   int arr[ARR_LEN];
   for (size_t i = 0; i < ARR_LEN; i++) {
-    printf("Enter an integer\n");
+    
 
     while (scanf("%d", (arr+i)) == 0)
       getchar();
