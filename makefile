@@ -11,12 +11,12 @@ isortFile/insertion.o: isortFile/insertion.c
 	gcc -Wall -c isortFile/insertion.c
 	mv insertion.o isortFile/
 
-txtfind: txtfindFile/stringFunctions.o txtfindFile/main.o
-	gcc txtfindFile/stringFunctions.o txtfindFile/main.o -o txtfind
+txtfind: txtfindFile/stringFunctions.o txtfindFile/maintf.o
+	gcc txtfindFile/stringFunctions.o txtfindFile/maintf.o -o txtfind
 
-txtfindFile/main.o: txtfindFile/main.c txtfindFile/stringFunctions.h
-	gcc -Wall -c txtfindFile/main.c
-	mv main.o txtfindFile/
+txtfindFile/main.o: txtfindFile/maintf.c txtfindFile/stringFunctions.h
+	gcc -Wall -c txtfindFile/maintf.c
+	mv maintf.o txtfindFile/
 
 txtfindFile/stringFunctions.o: txtfindFile/stringFunctions.c
 	gcc -Wall -c txtfindFile/stringFunctions.c
